@@ -4,7 +4,7 @@ A simple configuration generator for NGINX reverse proxies
 
 Generates .conf in the following format: 
 
-    upstream [src_fqdn]
+    upstream [dest_fqdn]
     {
         server [dest_fqdn]:[dest_port];
     }
