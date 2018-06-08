@@ -1,5 +1,5 @@
 // NGINX reverse proxy conf generator
-// Writte by @nepgeargo
+// Written by @nepgeargo
 
 /* Generates NGINX reverse proxy conf file in the following format:
  
