@@ -1,8 +1,8 @@
 # nginx-reverse-proxy-conf-generator
 
-# A simple configuration generator for NGINX reverse proxies
+A simple configuration generator for NGINX reverse proxies
 
-# Generates .conf in the following format: 
+Generates .conf in the following format: 
 
     upstream [src_fqdn]
     {
