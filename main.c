@@ -73,7 +73,7 @@ int main(int argc, char *argv[])
     Site_t src;
     Site_t dest;
 
-    printf("Welcome to NGINX reverse proxy generator\n");
+    printf("Welcome to NGINX reverse proxy configuration generator\n");
     printf("Written by @nepgeargo\n");
     PrintNewline();
     GetSite(&src, SRC);
