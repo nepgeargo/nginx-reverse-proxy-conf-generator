@@ -3,7 +3,7 @@
 
 /* Generates NGINX reverse proxy conf file in the following format:
  
-upstream [dest_fqdn]
+upstream [src_fqdn]
 {
     server [dest_fqdn]:[dest_port];
 }
@@ -73,7 +73,7 @@ int main(int argc, char *argv[])
     Site_t src;
     Site_t dest;
 
-    printf("Welcome to NGINX reverse proxy generator\n");
+    printf("Welcome to NGINX reverse proxy configuration generator\n");
     printf("Written by @nepgeargo\n");
     PrintNewline();
     GetSite(&src, SRC);
@@ -180,7 +180,7 @@ void PrintConf(Site_t *src, Site_t *dest)
     PrintNewline();
     printf("    location /\n");
     printf("    {\n");
-    printf("        proxy_pass https://%s\n", dest->fqdn);
+    printf("        proxy_pass https://%s;\n", dest->fqdn);
     printf("        proxy_set_header        Host            $host;\n");
     printf("        proxy_set_header        X-Real-IP       $remote_addr;\n");
     printf("        proxy_set_header        X-Forwarded-For $proxy_add_x_forwarded_for;\n");
