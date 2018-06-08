@@ -167,7 +167,7 @@ void PrintConf(Site_t *src, Site_t *dest)
     printf(GRN "Configuration generated!\n" RESET);
     PrintNewline();
 
-    printf("upstream %s\n", src->fqdn);
+    printf("upstream %s;\n", src->fqdn);
     printf("{\n");
     printf("    server %s:%d\n", dest->fqdn, dest->port);
     printf("}\n");
