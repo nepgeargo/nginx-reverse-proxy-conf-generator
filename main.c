@@ -89,7 +89,7 @@ void GetSite(Site_t *site, char *type)
     int port;
 
     // Reads the FQDN
-    printf("Please enter the FQDN of the %s: ", type);
+    printf("Please enter the FQDN or IP address of the %s: ", type);
     fqdnLen = GetLine(fqdn, NUM_CHAR);
     if (fqdnLen != 0)
     {
@@ -130,7 +130,7 @@ int GetLine(char *line, int maxLen)
     int len = 0;
     int numOverflow = 0;
 
-    while (((c = getchar()) != EOF) && !isalpha(c))
+    while (((c = getchar()) != EOF) && (!isalpha(c)) && (!isdigit(c)))
     {
         // Do nothing
     }
@@ -167,9 +167,9 @@ void PrintConf(Site_t *src, Site_t *dest)
     printf(GRN "Configuration generated!\n" RESET);
     PrintNewline();
 
-    printf("upstream %s;\n", src->fqdn);
+    printf("upstream %s\n", src->fqdn);
     printf("{\n");
-    printf("    server %s:%d\n", dest->fqdn, dest->port);
+    printf("    server %s:%d;\n", dest->fqdn, dest->port);
     printf("}\n");
     PrintNewline();
 
